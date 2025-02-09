@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="981.0" prefWidth="1350.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controller">
+   <children>
+      <ImageView fitHeight="922.0" fitWidth="1375.0" layoutX="-136.0" layoutY="-18.0" opacity="0.61" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/AdobeStock_136255856_Preview.jpeg" />
+         </image>
+         <effect>
+            <Lighting bumpInput="$null">
+               <light>
+                  <Light.Distant>
+                     <color>
+                        <Color red="0.9078947305679321" green="0.17653508484363556" blue="0.17653508484363556" />
+                     </color>
+                  </Light.Distant>
+               </light>
+            </Lighting>
+         </effect>
+      </ImageView>
+      <ImageView fitHeight="74.0" fitWidth="101.0" layoutX="141.0" layoutY="93.0" opacity="0.4" pickOnBounds="true" preserveRatio="true" rotate="-135.0">
+         <image>
+            <Image url="@../img/python_logo.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="120.0" fitWidth="117.0" layoutX="108.0" layoutY="242.0" opacity="0.7" pickOnBounds="true" preserveRatio="true" rotate="-18.4">
+         <image>
+            <Image url="@../img/pngegg%20(copy%201).png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="84.0" fitWidth="78.0" layoutX="54.0" layoutY="402.0" opacity="0.85" pickOnBounds="true" preserveRatio="true" rotate="45.0">
+         <image>
+            <Image url="@../img/pngegg%20(copy%202).png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="97.0" fitWidth="80.0" layoutX="296.0" layoutY="27.0" opacity="0.45" pickOnBounds="true" preserveRatio="true" rotate="20.6">
+         <image>
+            <Image url="@../img/pngegg%20(copy%204).png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="353.0" fitWidth="855.0" layoutX="194.0" layoutY="106.0" opacity="0.75" pickOnBounds="true" preserveRatio="true" rotate="12.1">
+         <image>
+            <Image url="@../img/BRAINSTROME-BATTLEGROUND-2-7-2025.gif" />
+         </image>
+      </ImageView>
+      <Button fx:id="playbtn" layoutX="523.0" layoutY="423.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="159.0" style="-fx-background-color: #F14A51;" text="Play " textFill="#4a3636">
+         <font>
+            <Font name="Hack Bold Italic" size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="settingbtn" layoutX="523.0" layoutY="517.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="159.0" style="-fx-background-color: #F14A51;" text="Settings" textFill="#4a3636">
+         <font>
+            <Font name="Hack Bold Italic" size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="exitbtn" layoutX="523.0" layoutY="604.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="159.0" style="-fx-background-color: #F14A51;" text="Exit" textFill="#4a3636">
+         <font>
+            <Font name="Hack Bold Italic" size="20.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="256.0" fitWidth="357.0" layoutX="741.0" layoutY="659.0" opacity="0.4" pickOnBounds="true" rotate="-26.6">
+         <image>
+            <Image url="@../img/—Pngtree—matrix%20code%20rain%20design%20elements_7133126.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="myImage" fitHeight="150.0" fitWidth="178.0" layoutX="14.0" layoutY="492.0" opacity="0.6" pickOnBounds="true">
+         <image>
+            <Image url="@../img/—Pngtree—code%20symbol%203d%20icon%20isolated_20363296.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="97.0" fitWidth="89.0" layoutX="17.0" layoutY="17.0" opacity="0.47" pickOnBounds="true" preserveRatio="true" rotate="-56.3">
+         <image>
+            <Image url="@../img/pngegg.png" />
+         </image></ImageView>
+      <ImageView fitHeight="92.0" fitWidth="88.0" layoutX="1026.0" layoutY="18.0" opacity="0.67" pickOnBounds="true" preserveRatio="true" rotate="-58.0">
+         <image>
+            <Image url="@../img/pngegg%20(copy%203).png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="65.0" fitWidth="80.0" layoutX="996.0" layoutY="205.0" opacity="0.55" pickOnBounds="true" rotate="-31.6">
+         <image>
+            <Image url="@../img/pngegg%20(copy%206).png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="84.0" fitWidth="73.0" layoutX="1036.0" layoutY="313.0" opacity="0.58" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/pngegg%20(copy%205).png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
