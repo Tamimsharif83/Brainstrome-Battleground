@@ -47,7 +47,7 @@
             <Image url="@../img/pngegg%20(copy%204).png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="353.0" fitWidth="855.0" layoutX="194.0" layoutY="106.0" opacity="0.75" pickOnBounds="true" preserveRatio="true" rotate="12.1">
+      <ImageView fitHeight="353.0" fitWidth="855.0" layoutX="233.0" layoutY="110.0" opacity="0.75" pickOnBounds="true" preserveRatio="true" rotate="12.1">
          <image>
             <Image url="@../img/BRAINSTROME-BATTLEGROUND-2-7-2025.gif" />
          </image>
@@ -72,11 +72,6 @@
             <Image url="@../img/—Pngtree—matrix%20code%20rain%20design%20elements_7133126.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="myImage" fitHeight="150.0" fitWidth="178.0" layoutX="14.0" layoutY="492.0" opacity="0.6" pickOnBounds="true">
-         <image>
-            <Image url="@../img/—Pngtree—code%20symbol%203d%20icon%20isolated_20363296.png" />
-         </image>
-      </ImageView>
       <ImageView fitHeight="97.0" fitWidth="89.0" layoutX="17.0" layoutY="17.0" opacity="0.47" pickOnBounds="true" preserveRatio="true" rotate="-56.3">
          <image>
             <Image url="@../img/pngegg.png" />
@@ -94,6 +89,11 @@
       <ImageView fitHeight="84.0" fitWidth="73.0" layoutX="1036.0" layoutY="313.0" opacity="0.58" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/pngegg%20(copy%205).png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="193.0" layoutX="347.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/output-onlinegiftools.gif" />
          </image>
       </ImageView>
    </children>
