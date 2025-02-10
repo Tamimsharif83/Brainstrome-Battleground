@@ -17,9 +17,11 @@
     <dependencies>
         <dependency>
             <groupId>org.openjfx</groupId>
-            <artifactId>javafx-controls</artifactId>
-            <version>${javafx.version}</version>
+            <artifactId>javafx-fxml</artifactId>
+            <version>23.0.1</version>
         </dependency>
+
+
     </dependencies>
 
     <build>
