@@ -9,7 +9,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="981.0" prefWidth="1350.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="981.0" prefWidth="1350.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fitHeight="922.0" fitWidth="1375.0" layoutX="-179.0" layoutY="-18.0" opacity="0.61" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -87,7 +87,7 @@
          </image>
       </ImageView>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="489.0" layoutY="366.0" pickOnBounds="true" preserveRatio="true" />
-      <Button fx:id="settingsbtn" layoutX="523.0" layoutY="521.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="159.0" style="-fx-background-color: #F14A51;" text="Settings" textFill="#4a3636">
+      <Button fx:id="settingsBtn" layoutX="523.0" layoutY="521.0" mnemonicParsing="false" onAction="#handleSettingsButton" prefHeight="50.0" prefWidth="159.0" style="-fx-background-color: #F14A51;" text="Settings" textFill="#4a3636">
          <font>
             <Font name="Hack Bold Italic" size="20.0" />
          </font>

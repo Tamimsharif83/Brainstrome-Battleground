@@ -1,22 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Slider?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="981.0" prefWidth="1294.0" style="-fx-background-color: #000;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml.Settingspage">
    <children>
-      <ImageView fitHeight="821.0" fitWidth="1365.0" layoutX="-17.0" layoutY="65.0" opacity="0.36" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="821.0" fitWidth="1365.0" layoutX="3.0" layoutY="36.0" opacity="0.46" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/21034617.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="148.0" fitWidth="588.0" layoutX="355.0" layoutY="164.0" opacity="0.83" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="148.0" fitWidth="588.0" layoutX="422.0" layoutY="164.0" opacity="0.83" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/Settings-2-10-2025.gif" />
          </image>
       </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="549.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="107.0" fitWidth="71.0" layoutX="698.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/output-onlinegiftools%20(copy%201).gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="128.0" fitWidth="119.0" layoutX="685.0" layoutY="449.0" opacity="0.53" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/Untitled%20design%20(1).png" />
+         </image>
+      </ImageView>
+      <Slider layoutX="308.0" layoutY="336.0" />
    </children>
 </AnchorPane>
