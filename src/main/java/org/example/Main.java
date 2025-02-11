@@ -14,7 +14,7 @@ public class Main extends Application {
     public void start(Stage stage) {
         try {
             // Load the FXML file from the correct resource folder
-            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/fxml/gameface.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/fxml/login.fxml"));
 
             // Create a scene using the FXML file
             // Scene scene = new Scene(fxmlLoader.load(), 824, 530);
