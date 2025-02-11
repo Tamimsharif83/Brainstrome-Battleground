@@ -20,7 +20,7 @@ public class Main extends Application {
             // Scene scene = new Scene(fxmlLoader.load(), 824, 530);
             Parent root = fxmlLoader.load();// Adjusted size according to FXML
             Scene scene = new Scene(root);
-            stage.setTitle("Hello!");
+            stage.setTitle("BrainStrome Battleground");
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {
