@@ -13,25 +13,28 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) {
         try {
-            // Load the FXML file from the correct resource folder
+            // Load the FXML file
             FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/fxml/login.fxml"));
-
-            // Create a scene using the FXML file
-            // Scene scene = new Scene(fxmlLoader.load(), 824, 530);
-            Parent root = fxmlLoader.load();// Adjusted size according to FXML
+            Parent root = fxmlLoader.load();
             Scene scene = new Scene(root);
+
+            // Set the title
             stage.setTitle("BrainStrome Battleground");
+
+            // Set the scene
             stage.setScene(scene);
+
+            // Disable maximize option
+            stage.setResizable(false);
+
+            // Show the stage
             stage.show();
         } catch (IOException e) {
-            // Print error information for debugging purposes
             e.printStackTrace();
         }
     }
 
     public static void main(String[] args) {
-        launch(); // Launch the JavaFX application
-
-        // significant change
+        launch();
     }
 }
