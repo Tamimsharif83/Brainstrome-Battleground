@@ -91,7 +91,7 @@
             <Font name="Hack Bold Italic" size="20.0" />
          </font>
       </Button>
-      <Button fx:id="playbtn" layoutX="523.0" layoutY="431.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="159.0" style="-fx-background-color: #F14A51;" text="Play" textFill="#4a3636">
+      <Button fx:id="playbtn" layoutX="523.0" layoutY="431.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="159.0" style="-fx-background-color: #F14A51;" text="Play" textFill="#4a3636" onAction="#handlePlayButton">
          <font>
             <Font name="Hack Bold Italic" size="20.0" />
          </font>
