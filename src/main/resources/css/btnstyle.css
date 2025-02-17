@@ -1,0 +1,24 @@
+#playbtn, #settingsBtn, #exitbtn {
+    -fx-background-color: #F14A51;
+    -fx-text-fill: #4a3636;
+    -fx-font-family: "Hack Bold Italic";
+    -fx-font-size: 20px;
+    -fx-background-radius: 100px; /* Rounded background */
+    -fx-border-radius: 100px; /* Rounded border */
+    -fx-transition: all 0.3s;
+}
+
+#playbtn:hover, #settingsBtn:hover, #exitbtn:hover {
+    
+    -fx-border-color: #46f1f1; /* White border */
+    -fx-border-width: 2px;
+    -fx-background-radius: 100px; /* Rounded background */
+    -fx-border-radius: 100px; /* Rounded border */
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+    -fx-translate-x: -2px;  /* Move slightly to the left */
+    -fx-translate-y: -2px;
+    -fx-text-fill: #46f1f1;
+    -fx-background-color: #8b1111;
+
+}
