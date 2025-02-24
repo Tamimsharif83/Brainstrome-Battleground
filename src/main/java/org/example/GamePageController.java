@@ -1,115 +1,223 @@
 package org.example;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.Button;
-import javafx.event.ActionEvent;
-
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.TextArea;
+import org.fxmisc.richtext.CodeArea;
+import org.fxmisc.richtext.model.StyleSpans;
+import org.fxmisc.richtext.model.StyleSpansBuilder;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.io.*;
 
 public class GamePageController {
 
     @FXML
-    private TextArea codeEditor;
+    private CodeArea codeEditor;
 
     @FXML
-    private TextArea outputArea;
+    private ChoiceBox<String> languageSelector;
 
     @FXML
-    private Button runButton;
-
-    @FXML
-    private ChoiceBox<String> languageSelector; // ভাষা সিলেক্ট করার জন্য
+    private TextArea outputArea; // Output দেখানোর জন্য TextArea
 
     @FXML
     public void initialize() {
-        // ডিফল্ট ভাষা লিস্টে যোগ করছি
         languageSelector.getItems().addAll("Python", "C", "C++", "Java");
-        languageSelector.setValue("Python"); // ডিফল্ট Python সেট
+        languageSelector.setValue("Python");
+        setupAutoComplete();
     }
 
+    private void setupAutoComplete() {
+        codeEditor.textProperty().addListener((obs, oldText, newText) -> {
+            if (newText.endsWith("(")) {
+                codeEditor.appendText(")");
+                codeEditor.moveTo(codeEditor.getCaretPosition() - 1);
+            } else if (newText.endsWith("{")) {
+                codeEditor.appendText("}");
+                codeEditor.moveTo(codeEditor.getCaretPosition() - 1);
+            } else if (newText.endsWith("\"")) {
+                codeEditor.appendText("\"");
+                codeEditor.moveTo(codeEditor.getCaretPosition() - 1);
+            }
+        });
+
+        codeEditor.textProperty().addListener((obs, oldText, newText) -> {
+            codeEditor.setStyleSpans(0, computeHighlighting(newText));
+        });
+    }
+
+    private static StyleSpans<Collection<String>> computeHighlighting(String text) {
+        final String[] KEYWORDS = { "public", "private", "class", "static", "void", "if", "else", "return", "while", "for" };
+        final Pattern KEYWORD_PATTERN = Pattern.compile("\\b(" + String.join("|", KEYWORDS) + ")\\b");
+
+        StyleSpansBuilder<Collection<String>> spansBuilder = new StyleSpansBuilder<>();
+        Matcher matcher = KEYWORD_PATTERN.matcher(text);
+        int lastKwEnd = 0;
+
+        while (matcher.find()) {
+            spansBuilder.add(Collections.emptyList(), matcher.start() - lastKwEnd);
+            spansBuilder.add(Collections.singleton("keyword"), matcher.end() - matcher.start());
+            lastKwEnd = matcher.end();
+        }
+        spansBuilder.add(Collections.emptyList(), text.length() - lastKwEnd);
+        return spansBuilder.create();
+    }
+
+    // ✅ runButton-এর জন্য Event Handler
     @FXML
     private void runCode() {
         String code = codeEditor.getText();
-        String selectedLanguage = languageSelector.getValue(); // ইউজার যে ভাষা সিলেক্ট করেছে
+        String language = languageSelector.getValue();
 
-        if (code.isEmpty()) {
-            outputArea.setText("Error: No code to run!");
-            return;
+        switch (language) {
+            case "Python":
+                runPythonCode(code);
+                break;
+            case "C":
+                runCCode(code);
+                break;
+            case "C++":
+                runCppCode(code);
+                break;
+            case "Java":
+                runJavaCode(code);
+                break;
+            default:
+                outputArea.setText("Unsupported Language: " + language);
         }
+    }
 
+    // ✅ Python রান করার জন্য মেথড
+    private void runPythonCode(String code) {
         try {
-            File tempFile;
-            ProcessBuilder pb;
+            File tempScript = File.createTempFile("script", ".py");
+            FileWriter writer = new FileWriter(tempScript);
+            writer.write(code);
+            writer.close();
 
-            switch (selectedLanguage) {
-                case "Python":
-                    tempFile = new File("temp_script.py");
-                    writeToFile(tempFile, code);
-                    pb = new ProcessBuilder("python", tempFile.getAbsolutePath());
-                    break;
-
-                case "C":
-                    tempFile = new File("temp_program.c");
-                    writeToFile(tempFile, code);
-                    Process compileC = new ProcessBuilder("gcc", tempFile.getAbsolutePath(), "-o", "temp_program").start();
-                    compileC.waitFor();
-                    pb = new ProcessBuilder("./temp_program");
-                    break;
-
-                case "C++":
-                    tempFile = new File("temp_program.cpp");
-                    writeToFile(tempFile, code);
-                    Process compileCpp = new ProcessBuilder("g++", tempFile.getAbsolutePath(), "-o", "temp_program").start();
-                    compileCpp.waitFor();
-                    pb = new ProcessBuilder("./temp_program");
-                    break;
-
-                case "Java":
-                    tempFile = new File("TempProgram.java");
-                    writeToFile(tempFile, code);
-                    Process compileJava = new ProcessBuilder("javac", tempFile.getAbsolutePath()).start();
-                    compileJava.waitFor();
-                    pb = new ProcessBuilder("java", "TempProgram");
-                    break;
-
-                default:
-                    outputArea.setText("Error: Unsupported language!");
-                    return;
-            }
-
+            ProcessBuilder pb = new ProcessBuilder("python", tempScript.getAbsolutePath());
             pb.redirectErrorStream(true);
             Process process = pb.start();
+
             BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
             StringBuilder output = new StringBuilder();
             String line;
-
             while ((line = reader.readLine()) != null) {
                 output.append(line).append("\n");
             }
-
             process.waitFor();
+
             outputArea.setText(output.toString());
-
-            // Cleanup
-            tempFile.delete();
-            new File("temp_program").delete();
-            new File("TempProgram.class").delete();
-
         } catch (Exception e) {
             outputArea.setText("Error: " + e.getMessage());
         }
     }
 
-    private void writeToFile(File file, String content) throws IOException {
-        PrintWriter writer = new PrintWriter(file);
-        writer.println(content);
-        writer.close();
+    // ✅ C রান করার জন্য মেথড
+    private void runCCode(String code) {
+        try {
+            File tempC = File.createTempFile("program", ".c");
+            FileWriter writer = new FileWriter(tempC);
+            writer.write(code);
+            writer.close();
+
+            File exeFile = new File(tempC.getParent(), "program.exe");
+
+            ProcessBuilder compile = new ProcessBuilder("gcc", tempC.getAbsolutePath(), "-o", exeFile.getAbsolutePath());
+            compile.redirectErrorStream(true);
+            Process compileProcess = compile.start();
+            compileProcess.waitFor();
+
+            ProcessBuilder run = new ProcessBuilder(exeFile.getAbsolutePath());
+            run.redirectErrorStream(true);
+            Process runProcess = run.start();
+
+            BufferedReader reader = new BufferedReader(new InputStreamReader(runProcess.getInputStream()));
+            StringBuilder output = new StringBuilder();
+            String line;
+            while ((line = reader.readLine()) != null) {
+                output.append(line).append("\n");
+            }
+            runProcess.waitFor();
+
+            outputArea.setText(output.toString());
+        } catch (Exception e) {
+            outputArea.setText("Error: " + e.getMessage());
+        }
+    }
+
+    // ✅ C++ রান করার জন্য মেথড
+    private void runCppCode(String code) {
+        try {
+            File tempCpp = File.createTempFile("program", ".cpp");
+            FileWriter writer = new FileWriter(tempCpp);
+            writer.write(code);
+            writer.close();
+
+            File exeFile = new File(tempCpp.getParent(), "program.exe");
+
+            ProcessBuilder compile = new ProcessBuilder("g++", tempCpp.getAbsolutePath(), "-o", exeFile.getAbsolutePath());
+            compile.redirectErrorStream(true);
+            Process compileProcess = compile.start();
+            compileProcess.waitFor();
+
+            ProcessBuilder run = new ProcessBuilder(exeFile.getAbsolutePath());
+            run.redirectErrorStream(true);
+            Process runProcess = run.start();
+
+            BufferedReader reader = new BufferedReader(new InputStreamReader(runProcess.getInputStream()));
+            StringBuilder output = new StringBuilder();
+            String line;
+            while ((line = reader.readLine()) != null) {
+                output.append(line).append("\n");
+            }
+            runProcess.waitFor();
+
+            outputArea.setText(output.toString());
+        } catch (Exception e) {
+            outputArea.setText("Error: " + e.getMessage());
+        }
+    }
+
+    // ✅ Java রান করার জন্য মেথড
+    private void runJavaCode(String code) {
+        try {
+            File tempJava = File.createTempFile("Main", ".java");
+            FileWriter writer = new FileWriter(tempJava);
+            writer.write(code);
+            writer.close();
+
+            ProcessBuilder compile = new ProcessBuilder("javac", tempJava.getAbsolutePath());
+            compile.redirectErrorStream(true);
+            Process compileProcess = compile.start();
+            compileProcess.waitFor();
+
+            ProcessBuilder run = new ProcessBuilder("java", "-cp", tempJava.getParent(), "Main");
+            run.redirectErrorStream(true);
+            Process runProcess = run.start();
+
+            BufferedReader reader = new BufferedReader(new InputStreamReader(runProcess.getInputStream()));
+            StringBuilder output = new StringBuilder();
+            String line;
+            while ((line = reader.readLine()) != null) {
+                output.append(line).append("\n");
+            }
+            runProcess.waitFor();
+
+            outputArea.setText(output.toString());
+        } catch (Exception e) {
+            outputArea.setText("Error: " + e.getMessage());
+        }
     }
 
     @FXML
-    private void handleResetButton(ActionEvent event) {
-        codeEditor.clear(); // Reset the code editor
+    private void handleResetButton() {
+        codeEditor.clear();
+        outputArea.clear();
+        languageSelector.setValue("Python");
     }
 }
