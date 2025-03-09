@@ -15,13 +15,18 @@ public class SettingsController {
 
     @FXML
     private Slider volumeSlider;
-    private MediaPlayer mediaPlayer;
+
     @FXML
     public void initialize() {
         if (Main.mainMusicPlayer != null) {
-            volumeSlider.setValue(Main.mainMusicPlayer.getVolume() * 100); // Convert 0.0-1.0 to 0-100
+            // স্লাইডারের মান সেট করা হচ্ছে (0-100 স্কেলে)
+            volumeSlider.setValue(Main.mainMusicPlayer.getVolume() * 100);
+
+            // যখন স্লাইডার পরিবর্তন হবে, তখন মিডিয়া প্লেয়ারের ভলিউম আপডেট হবে
             volumeSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
-                Main.mainMusicPlayer.setVolume(newValue.doubleValue() / 100); // Convert back to 0.0-1.0
+                double newVolume = newValue.doubleValue() / 100; // 0.0 - 1.0 এ রূপান্তর
+                Main.mainMusicPlayer.setVolume(newVolume);
+                System.out.println("Updated Volume: " + newVolume); // Debugging log
             });
         }
     }
@@ -41,10 +46,15 @@ public class SettingsController {
     }
 
     public void setMusicPlayer(MediaPlayer mainMusicPlayer) {
-        if (mediaPlayer != null) {
-            volumeSlider.setValue(mediaPlayer.getVolume() * 100);
+        if (mainMusicPlayer != null) {
+            // স্লাইডারের মান সেট করা হচ্ছে
+            volumeSlider.setValue(mainMusicPlayer.getVolume() * 100);
+
+            // স্লাইডারের মান পরিবর্তন হলে মিডিয়া প্লেয়ারের ভলিউম আপডেট হবে
             volumeSlider.valueProperty().addListener((observable, oldValue, newValue) -> {
-                mediaPlayer.setVolume(newValue.doubleValue() / 100);
+                double newVolume = newValue.doubleValue() / 100;
+                mainMusicPlayer.setVolume(newVolume);
+                System.out.println("Updated Volume from setMusicPlayer: " + newVolume); // Debugging log
             });
         }
     }
