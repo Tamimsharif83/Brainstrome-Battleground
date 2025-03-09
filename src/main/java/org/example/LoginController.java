@@ -28,20 +28,16 @@ public class LoginController {
     }
 
     @FXML
+
     private void switchToGameface(ActionEvent event) throws IOException {
         try {
-            // Stop the intro music
-            if (introMusicPlayer != null) {
-                introMusicPlayer.stop();
-            }
+            // Stop the intro music and start main music
+            introMusicPlayer.stop();
+            Main.playMainMusic();
 
             // Load the gameface.fxml file
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/gameface.fxml"));
             Parent gamefaceRoot = loader.load();
-
-            // Get the controller of gameface.fxml to start the main music
-            GamefaceController gamefaceController = loader.getController();
-            gamefaceController.startMainMusic();
 
             // Get the current stage
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -53,4 +49,5 @@ public class LoginController {
             e.printStackTrace(); // Prints the error if loading fails
         }
     }
+
 }
