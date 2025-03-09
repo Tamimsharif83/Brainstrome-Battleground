@@ -16,15 +16,15 @@
             <Image url="@../img/AdobeStock_136255856_Preview.jpeg" />
          </image>
          <effect>
-            <Lighting bumpInput="$null">
-               <light>
-                  <Light.Distant>
-                     <color>
-                        <Color red="0.9078947305679321" green="0.17653508484363556" blue="0.17653508484363556" />
-                     </color>
-                  </Light.Distant>
-               </light>
-            </Lighting>
+<!--            <Lighting bumpInput="$null">-->
+<!--               <light>-->
+<!--                  <Light.Distant>-->
+<!--                     <color>-->
+<!--                        <Color red="0.9078947305679321" green="0.17653508484363556" blue="0.17653508484363556" />-->
+<!--                     </color>-->
+<!--                  </Light.Distant>-->
+<!--               </light>-->
+<!--            </Lighting>-->
          </effect>
       </ImageView>
       <ImageView fitHeight="74.0" fitWidth="101.0" layoutX="164.0" layoutY="43.0" opacity="0.4" pickOnBounds="true" preserveRatio="true" rotate="-135.0">

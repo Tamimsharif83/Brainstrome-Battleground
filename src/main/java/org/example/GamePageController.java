@@ -91,7 +91,6 @@ public class GamePageController {
         }
     }
 
-    // ✅ Python রান করার জন্য মেথড
     private void runPythonCode(String code) {
         try {
             File tempScript = File.createTempFile("script", ".py");

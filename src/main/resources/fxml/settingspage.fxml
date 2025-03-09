@@ -30,7 +30,8 @@
             <Image url="@../img/Untitled design (1).png" />
          </image>
       </ImageView>
-      <Slider layoutX="698.0" layoutY="395.0" prefHeight="66.0" prefWidth="231.0" showTickMarks="true" snapToTicks="true" />
+      <Slider fx:id="volumeSlider" layoutX="698.0" layoutY="395.0" prefHeight="66.0" prefWidth="231.0" showTickMarks="true" snapToTicks="true" />
+
       <ImageView fitHeight="71.0" fitWidth="215.0" layoutX="449.0" layoutY="395.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../img/Sound-2-11-2025 (1).png" />
