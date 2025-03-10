@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="975.0" prefWidth="1323.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.signupController" >
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="975.0" prefWidth="1323.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.signupController">
     <children>
         <ImageView fitHeight="927.0" fitWidth="815.0" layoutX="-2.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
             <image>
@@ -33,7 +33,7 @@
                 <Reflection />
             </effect>
         </Label>
-        <Button fx:id="signbtn" layoutX="1004.0" layoutY="606.0" onAction="#switchToGameface" mnemonicParsing="false" prefHeight="37.0" prefWidth="102.0" style="-fx-background-color: red;" text="Sign Up">
+        <Button fx:id="signbtn" layoutX="1004.0" layoutY="606.0" mnemonicParsing="false" onAction="#switchToGameface" prefHeight="37.0" prefWidth="102.0" style="-fx-background-color: red;" text="Sign Up">
             <font>
                 <Font name="Hack Bold Italic" size="16.0" />
             </font>
@@ -62,12 +62,12 @@
                 <Image url="@../img/pngwing.com.png" />
             </image>
         </ImageView>
-        <Label layoutX="892.0" layoutY="518.0" prefHeight="37.0" prefWidth="243.0" text="Already have an account? " textFill="#e12121">
+        <Label layoutX="863.0" layoutY="518.0" prefHeight="37.0" prefWidth="243.0" text="Already have an account? " textFill="#e12121">
             <font>
                 <Font name="System Italic" size="20.0" />
             </font>
         </Label>
-        <Label fx:id="loginLabel" layoutX="1106.0" layoutY="522.0" onMouseClicked="#switchToLogin" prefHeight="29.0" prefWidth="84.0" style="-fx-underline: true; -fx-cursor: hand;" text="Login" textFill="#0fcbff">
+        <Label fx:id="loginLabel" layoutX="1100.0" layoutY="522.0" onMouseClicked="#switchToLogin" prefHeight="29.0" prefWidth="84.0" style="-fx-underline: true; -fx-cursor: hand;" text="Login" textFill="#0fcbff">
             <font>
                 <Font name="System Italic" size="18.0" />
             </font>
