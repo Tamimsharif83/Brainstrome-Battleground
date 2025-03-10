@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="975.0" prefWidth="1323.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.LoginController" stylesheets="@/css/btnstyle.css">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="975.0" prefWidth="1323.0" style="-fx-background-color: black;" stylesheets="@/css/btnstyle.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.LoginController">
     <children>
         <ImageView fitHeight="927.0" fitWidth="815.0" layoutX="-2.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
             <image>
@@ -62,5 +62,16 @@
                 <Image url="@../img/pngwing.com.png" />
             </image>
         </ImageView>
+        <Label fx:id="accountquery" layoutX="892.0" layoutY="518.0" prefHeight="37.0" prefWidth="243.0" text="Don't have an account? " textFill="#e12121">
+            <font>
+                <Font name="System Italic" size="20.0" />
+            </font>
+        </Label>
+        <Label fx:id="signupLabel" layoutX="1106.0" layoutY="522.0" onMouseClicked="#handleSignupClick" prefHeight="29.0" prefWidth="84.0" style="-fx-underline: true; -fx-cursor: hand;" text="SignUp" textFill="#0fcbff">
+            <font>
+                <Font name="System Italic" size="18.0" />
+            </font>
+        </Label>
+
     </children>
 </AnchorPane>

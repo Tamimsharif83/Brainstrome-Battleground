@@ -10,91 +10,91 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="981.0" prefWidth="1350.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.GamefaceController" stylesheets="@/css/btnstyle.css">
-   <children>
-      <ImageView fitHeight="1022.0" fitWidth="1528.0" layoutX="-179.0" layoutY="-234.0" opacity="0.61" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../img/AdobeStock_136255856_Preview.jpeg" />
-         </image>
-         <effect>
-<!--            <Lighting bumpInput="$null">-->
-<!--               <light>-->
-<!--                  <Light.Distant>-->
-<!--                     <color>-->
-<!--                        <Color red="0.9078947305679321" green="0.17653508484363556" blue="0.17653508484363556" />-->
-<!--                     </color>-->
-<!--                  </Light.Distant>-->
-<!--               </light>-->
-<!--            </Lighting>-->
-         </effect>
-      </ImageView>
-      <ImageView fitHeight="74.0" fitWidth="101.0" layoutX="164.0" layoutY="43.0" opacity="0.4" pickOnBounds="true" preserveRatio="true" rotate="-135.0">
-         <image>
-            <Image url="@../img/python_logo.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="120.0" fitWidth="117.0" layoutX="108.0" layoutY="242.0" opacity="0.7" pickOnBounds="true" preserveRatio="true" rotate="-18.4">
-         <image>
-            <Image url="@../img/pngegg (copy 1).png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="84.0" fitWidth="78.0" layoutX="54.0" layoutY="402.0" opacity="0.85" pickOnBounds="true" preserveRatio="true" rotate="45.0">
-         <image>
-            <Image url="@../img/pngegg (copy 2).png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="97.0" fitWidth="80.0" layoutX="712.0" layoutY="2.0" opacity="0.45" pickOnBounds="true" preserveRatio="true" rotate="20.6">
-         <image>
-            <Image url="@../img/pngegg (copy 4).png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="353.0" fitWidth="855.0" layoutX="207.0" layoutY="110.0" opacity="0.75" pickOnBounds="true" preserveRatio="true" rotate="12.1">
-         <image>
-            <Image url="@../img/BRAINSTROME-BATTLEGROUND-2-7-2025.gif" />
-         </image>
-      </ImageView>
-      <Button fx:id="exitbtn" layoutX="523.0" layoutY="604.0" mnemonicParsing="false" onAction="#handleExit" prefHeight="50.0" prefWidth="159.0" style="-fx-background-color: #F14A51;" text="Exit" textFill="#4a3636">
-         <font>
-            <Font name="Hack Bold Italic" size="20.0" />
-         </font>
-      </Button>
-      <ImageView fitHeight="293.0" fitWidth="496.0" layoutX="724.0" layoutY="626.0" opacity="0.4" pickOnBounds="true">
-         <image>
-            <Image url="@../img/—Pngtree—matrix code rain design elements_7133126.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="97.0" fitWidth="89.0" layoutX="17.0" layoutY="17.0" opacity="0.47" pickOnBounds="true" preserveRatio="true" rotate="-56.3">
-         <image>
-            <Image url="@../img/pngegg.png" />
-         </image></ImageView>
-      <ImageView fitHeight="92.0" fitWidth="88.0" layoutX="1026.0" layoutY="18.0" opacity="0.67" pickOnBounds="true" preserveRatio="true" rotate="-58.0">
-         <image>
-            <Image url="@../img/pngegg (copy 3).png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="65.0" fitWidth="80.0" layoutX="996.0" layoutY="205.0" opacity="0.55" pickOnBounds="true" rotate="-31.6">
-         <image>
-            <Image url="@../img/pngegg (copy 6).png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="84.0" fitWidth="73.0" layoutX="1036.0" layoutY="313.0" opacity="0.58" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../img/pngegg (copy 5).png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="193.0" layoutX="523.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../img/output-onlinegiftools.gif" />
-         </image>
-      </ImageView>
-      <Button fx:id="settingsBtn" layoutX="523.0" layoutY="521.0" mnemonicParsing="false" onAction="#handleSettingsButton" prefHeight="50.0" prefWidth="159.0" style="-fx-background-color: #F14A51;" text="Settings" textFill="#4a3636">
-         <font>
-            <Font name="Hack Bold Italic" size="20.0" />
-         </font>
-      </Button>
-      <Button fx:id="playbtn" layoutX="523.0" layoutY="431.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="159.0" style="-fx-background-color: #F14A51;" text="Play" textFill="#4a3636" onAction="#handlePlayButton">
-         <font>
-            <Font name="Hack Bold Italic" size="20.0" />
-         </font>
-      </Button>
-   </children>
+    <children>
+        <ImageView fitHeight="1022.0" fitWidth="1528.0" layoutX="-179.0" layoutY="-234.0" opacity="0.61" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../img/AdobeStock_136255856_Preview.jpeg" />
+            </image>
+            <effect>
+                <!--            <Lighting bumpInput="$null">-->
+                <!--               <light>-->
+                <!--                  <Light.Distant>-->
+                <!--                     <color>-->
+                <!--                        <Color red="0.9078947305679321" green="0.17653508484363556" blue="0.17653508484363556" />-->
+                <!--                     </color>-->
+                <!--                  </Light.Distant>-->
+                <!--               </light>-->
+                <!--            </Lighting>-->
+            </effect>
+        </ImageView>
+        <ImageView fitHeight="74.0" fitWidth="101.0" layoutX="164.0" layoutY="43.0" opacity="0.4" pickOnBounds="true" preserveRatio="true" rotate="-135.0">
+            <image>
+                <Image url="@../img/python_logo.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="120.0" fitWidth="117.0" layoutX="108.0" layoutY="242.0" opacity="0.7" pickOnBounds="true" preserveRatio="true" rotate="-18.4">
+            <image>
+                <Image url="@../img/pngegg (copy 1).png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="84.0" fitWidth="78.0" layoutX="54.0" layoutY="402.0" opacity="0.85" pickOnBounds="true" preserveRatio="true" rotate="45.0">
+            <image>
+                <Image url="@../img/pngegg (copy 2).png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="97.0" fitWidth="80.0" layoutX="712.0" layoutY="2.0" opacity="0.45" pickOnBounds="true" preserveRatio="true" rotate="20.6">
+            <image>
+                <Image url="@../img/pngegg (copy 4).png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="353.0" fitWidth="855.0" layoutX="207.0" layoutY="110.0" opacity="0.75" pickOnBounds="true" preserveRatio="true" rotate="12.1">
+            <image>
+                <Image url="@../img/BRAINSTROME-BATTLEGROUND-2-7-2025.gif" />
+            </image>
+        </ImageView>
+        <Button fx:id="exitbtn" layoutX="523.0" layoutY="604.0" mnemonicParsing="false" onAction="#handleExit" prefHeight="50.0" prefWidth="159.0" style="-fx-background-color: #F14A51;" text="Exit" textFill="#4a3636">
+            <font>
+                <Font name="Hack Bold Italic" size="20.0" />
+            </font>
+        </Button>
+        <ImageView fitHeight="293.0" fitWidth="496.0" layoutX="724.0" layoutY="626.0" opacity="0.4" pickOnBounds="true">
+            <image>
+                <Image url="@../img/—Pngtree—matrix code rain design elements_7133126.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="97.0" fitWidth="89.0" layoutX="17.0" layoutY="17.0" opacity="0.47" pickOnBounds="true" preserveRatio="true" rotate="-56.3">
+            <image>
+                <Image url="@../img/pngegg.png" />
+            </image></ImageView>
+        <ImageView fitHeight="92.0" fitWidth="88.0" layoutX="1026.0" layoutY="18.0" opacity="0.67" pickOnBounds="true" preserveRatio="true" rotate="-58.0">
+            <image>
+                <Image url="@../img/pngegg (copy 3).png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="65.0" fitWidth="80.0" layoutX="996.0" layoutY="205.0" opacity="0.55" pickOnBounds="true" rotate="-31.6">
+            <image>
+                <Image url="@../img/pngegg (copy 6).png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="84.0" fitWidth="73.0" layoutX="1036.0" layoutY="313.0" opacity="0.58" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../img/pngegg (copy 5).png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="150.0" fitWidth="193.0" layoutX="523.0" layoutY="110.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../img/output-onlinegiftools.gif" />
+            </image>
+        </ImageView>
+        <Button fx:id="settingsBtn" layoutX="523.0" layoutY="521.0" mnemonicParsing="false" onAction="#handleSettingsButton" prefHeight="50.0" prefWidth="159.0" style="-fx-background-color: #F14A51;" text="Settings" textFill="#4a3636">
+            <font>
+                <Font name="Hack Bold Italic" size="20.0" />
+            </font>
+        </Button>
+        <Button fx:id="playbtn" layoutX="523.0" layoutY="431.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="159.0" style="-fx-background-color: #F14A51;" text="Play" textFill="#4a3636" onAction="#handlePlayButton">
+            <font>
+                <Font name="Hack Bold Italic" size="20.0" />
+            </font>
+        </Button>
+    </children>
 </AnchorPane>
