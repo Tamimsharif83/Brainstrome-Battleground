@@ -13,6 +13,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.scene.input.MouseEvent; // Add this import
 import java.io.File;
 import java.io.IOException;
 
@@ -98,7 +99,7 @@ public class signupController {
     }
 
     @FXML
-    private void switchToLogin(ActionEvent event) {
+    private void switchToLogin(MouseEvent event) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/login.fxml"));
             Parent loginPage = loader.load();

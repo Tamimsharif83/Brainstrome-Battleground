@@ -1,4 +1,4 @@
-#playbtn, #settingsBtn, #exitbtn, #lgbtn{
+#playbtn, #settingsBtn, #exitbtn, #lgbtn,#signbtn{
     -fx-background-color: #F14A51;
     -fx-text-fill: #4a3636;
     -fx-font-family: "Hack Bold Italic";
@@ -8,7 +8,7 @@
     -fx-transition: all 0.3s;
 }
 
-#playbtn:hover, #settingsBtn:hover, #exitbtn:hover,#lgbtn:hover {
+#playbtn:hover, #settingsBtn:hover, #exitbtn:hover,#lgbtn:hover,#signbtn:hover {
     -fx-background-color: black !important;
     -fx-border-color: #46f1f1; /* White border */
     -fx-border-width: 2px;

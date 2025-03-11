@@ -1,9 +1,14 @@
 package org.example;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextArea;
+import javafx.stage.Stage;
 import org.fxmisc.richtext.CodeArea;
 import org.fxmisc.richtext.model.StyleSpans;
 import org.fxmisc.richtext.model.StyleSpansBuilder;
@@ -15,6 +20,7 @@ import java.io.*;
 
 public class GamePageController {
 
+    public Button backButton;
     @FXML
     private CodeArea codeEditor;
 
@@ -212,6 +218,18 @@ public class GamePageController {
             outputArea.setText("Error: " + e.getMessage());
         }
     }
+    @FXML
+    private void handleBackButton() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/gameface.fxml"));
+            Parent root = loader.load();
+            Stage stage = (Stage) backButton.getScene().getWindow();
+            stage.setScene(new Scene(root));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     @FXML
     private void handleResetButton() {
@@ -219,4 +237,6 @@ public class GamePageController {
         outputArea.clear();
         languageSelector.setValue("Python");
     }
+
+
 }

@@ -54,4 +54,6 @@
             </ImageView>
         </graphic>
     </Button>
+    <Button fx:id="backButton" layoutX="50.0" layoutY="30.0" text="Back" onAction="#handleBackButton" prefHeight="34.0" prefWidth="80.0"/>
+
 </AnchorPane>
